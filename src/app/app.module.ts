@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule } from '@angular/common/http';
 
+import {HomeModule} from './home/home.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,8 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule,
     AppRoutes,
+    HomeModule,
     TransferHttpModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

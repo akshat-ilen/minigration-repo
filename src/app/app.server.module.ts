@@ -10,6 +10,7 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 import { ServerTransferStateModule } from '@angular/platform-server';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { ServerTransferStateModule } from '@angular/platform-server';
     NoopAnimationsModule,
     ServerTransferStateModule,
     ServerModule,
+    HomeModule,
     ModuleMapLoaderModule,
   ],
   bootstrap: [AppComponent],

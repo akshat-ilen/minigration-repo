@@ -1,6 +1,6 @@
-const domino = require('domino');
-const fs = require('fs');
-const path = require('path');
+import domino from 'domino';
+import fs from 'fs';
+import path from 'path';
 const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'index.html')).toString();
 const win = domino.createWindow(template);
 const files = fs.readdirSync(`${process.cwd()}/dist-server`);

@@ -1,5 +1,35 @@
-<p>
-  home works!
-</p>
+
+
+
+
+<header (window:resize)="onResize($event)">
+  <div class="ui-g">
+    <div class="ui-g-2 ui-sm-2 ui-md-2 ui-lg- ui-xl-1 ">
+        <div class="logo" (click)="openMenu()">
+            <img src="/assets/showcase/images/logomutterfly.png" alt="">
+            <span><i class="fa fa-angle-down"></i></span>
+        </div>
+    </div>
+    <div class="search-bar-group ui-g-3 ui-sm-offset-2 ui-sm-9 ui-md-3 ui-lg-3 ui-xl-4">
+        <div class="search-bar ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
+            <input type="text" pInputText placeholder="Playstation 4">         
+        </div>
+    </div>
+    <div class="ui-g-6 ui-sm-1 ui-md-7 ui-lg-6 ui-xl-6 menuGrid">
+        <p-menubar styleClass='c-menubar' [model]="items" [autoDisplay]="false"></p-menubar>
+    </div>
+    <div class="personal-offset-grid">
+    </div>
+  </div>
+</header>
+
+
+<p-sidebar [(visible)]="menuSideBar" position='top' [baseZIndex]="10000">
+    <h1 style="font-weight:normal">Full Screen Sidebar</h1>
+    <button pButton type="button" (click)="menuSideBar = false" label="Save" class="ui-button-success"></button>
+    <button pButton type="button" (click)="menuSideBar = false" label="Cancel" class="ui-button-secondary"></button>
+</p-sidebar>
+
 
 
