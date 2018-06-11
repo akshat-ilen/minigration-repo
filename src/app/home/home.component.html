@@ -6,29 +6,71 @@
   <div class="ui-g">
     <div class="ui-g-2 ui-sm-2 ui-md-2 ui-lg- ui-xl-1 ">
         <div class="logo" (click)="openMenu()">
+            <span><i class="fa fa-bars"></i></span>
             <img src="/assets/showcase/images/logomutterfly.png" alt="">
-            <span><i class="fa fa-angle-down"></i></span>
         </div>
     </div>
     <div class="search-bar-group ui-g-3 ui-sm-offset-2 ui-sm-9 ui-md-3 ui-lg-3 ui-xl-4">
         <div class="search-bar ui-inputgroup">
             <span class="ui-inputgroup-addon"><i class="fa fa-search"></i></span>
-            <input type="text" pInputText placeholder="Playstation 4">         
+            <input type="text" pInputText placeholder="Explore Mutterfly...">         
         </div>
     </div>
     <div class="ui-g-6 ui-sm-1 ui-md-7 ui-lg-6 ui-xl-6 menuGrid">
-        <p-menubar styleClass='c-menubar' [model]="items" [autoDisplay]="false"></p-menubar>
+        <p-megaMenu styleClass='c-menubar' [model]="items"></p-megaMenu>
     </div>
     <div class="personal-offset-grid">
     </div>
   </div>
 </header>
 
+<p-sidebar [(visible)]="menuSideBar" position='left' [baseZIndex]="10000" [blockScroll]="true">
+    <h2 style="font-weight:normal">Welcome to Mutterfly</h2>
+    <div class="ui-g">
+        <button class="ui-g-5 ui-sm-5 ui-md-5 sidePanelMenuButton">
+            <span ><i class="fa fa-ravelry"></i></span>   Products
+        </button>
+        <button class="ui-g-5 ui-sm-offset-1 ui-md-offset-1 ui-sm-6 ui-md-6 sidePanelMenuButton">
+            <span ><i class="fa fa-ravelry"></i></span>  Experiences
+        </button>
+    </div>
+    <br><br>
 
-<p-sidebar [(visible)]="menuSideBar" position='left' [baseZIndex]="10000">
-    <h1 style="font-weight:normal">Full Screen Sidebar</h1>
-    <button pButton type="button" (click)="menuSideBar = false" label="Save" class="ui-button-success"></button>
-    <button pButton type="button" (click)="menuSideBar = false" label="Cancel" class="ui-button-secondary"></button>
+    <div class="panelList">
+        <div class="ui-g panel">
+            <div class="ui-g-10 ui-sm-10 ui-md-10">Profile</div>
+            <div class="ui-g-2 ui-sm-2 ui-md-2">
+                <span ><i class="fa fa-ravelry"></i></span>
+            </div>
+        </div>  
+        <div class="ui-g panel">
+            <div class="ui-g-10 ui-sm-10 ui-md-10">Verify your profile</div>
+            <div class="ui-g-2 ui-sm-2 ui-md-2">
+                <span ><i class="fa fa-ravelry"></i></span>
+            </div>
+        </div>
+        <div class="ui-g panel">
+            <div class="ui-g-10 ui-sm-10 ui-md-10">Orders</div>
+            <div class="ui-g-2 ui-sm-2 ui-md-2">
+                <span ><i class="fa fa-ravelry"></i></span>
+            </div>
+        </div>
+        <div class="ui-g panel">
+            <div class="ui-g-10 ui-sm-10 ui-md-10">Bank Details</div>
+            <div class="ui-g-2 ui-sm-2 ui-md-2">
+                <span ><i class="fa fa-ravelry"></i></span>
+            </div>
+        </div> 
+        <hr>
+        <div class="ui-g panel">
+            <div class="ui-g-10 ui-sm-10 ui-md-10">Logout</div>
+            <div class="ui-g-2 ui-sm-2 ui-md-2">
+                <span ><i class="fa fa-ravelry"></i></span>
+            </div>
+        </div> 
+        
+    </div>
+
 </p-sidebar>
 
 

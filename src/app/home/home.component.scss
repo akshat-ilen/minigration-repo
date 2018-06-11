@@ -1,15 +1,78 @@
+// MegaMenu
+
 .c-menubar {
     background: #EE5B67;
-    border : 0
+    border : 0;
+    top:100px;
 }
 
-.c-menubar .ui-menuitem .ui-menuitem-link {
-    color: white
+.ui-megamenu .ui-menuitem.ui-menuitem-active > .ui-menuitem-link{
+    background: white;
 }
 
-.ui-menubar .ui-menubar-root-list {
+.ui-megamenu .ui-menuitem > .ui-menuitem-link:hover {
+    background: white;
+}
+
+.ui-megamenu .ui-menuitem > .ui-menuitem-link:hover > .ui-menuitem-text {
+    color: #19A599;
+}
+
+.ui-megamenu .ui-menuitem.ui-menuitem-active > .ui-menuitem-link > .ui-menuitem-text {
+    color: #19A599;
+}
+
+.ui-menuitem > .mainMenuElements {
+    padding : 5px 10px;
+}
+
+.ui-menuitem > .menuButtons {
+    padding : 5px 20px;
+}
+
+.mainMenuElements .ui-menuitem-text{
+    color: white;
+}
+
+.ui-megamenu .ui-menuitem.ui-menuitem-active > .mainMenuElements{
+    background: white;
+}
+
+.ui-megamenu .ui-menuitem > .mainMenuElements:hover {
+    background: white;
+}
+
+.ui-megamenu .ui-menuitem > .mainMenuElements:hover > .ui-menuitem-text {
+    color: #EE5B67;
+}
+
+.ui-megamenu .ui-menuitem.ui-menuitem-active > .mainMenuElements > .ui-menuitem-text {
+    color: #EE5B67;
+}
+
+.ui-megamenu .ui-megamenu-root-list {
+    margin: 10px;
     float : right
 }
+
+.ui-submenu-icon {
+    display : none
+}
+
+.menuGrid {
+    height : 70px;
+}
+
+.ui-widget-header {
+    font-size: 18px;
+    color : #EE5B67;
+    background: white;
+    border : 0px;
+}
+
+
+
+//Media Queries
 
 @media all and (max-width: 850px) {
     .menuGrid {
@@ -18,6 +81,9 @@
     .search-bar-group {
         height : inherit;
         width : 60%
+    }
+    .logo {
+        cursor: pointer
     }
 }
 
@@ -31,8 +97,7 @@
     width : 5%
 }
 
-
-
+//Main Header Component
 
 header {
     height : 70px;
@@ -40,10 +105,13 @@ header {
     background: #EE5B67;
 }
 
+
+//Images And hamburger Component
 .logo img{
     max-height : 50px;
     max-width : 50px;
     display: block;
+    left : 30px;
     margin: 5px 10px
 }
 
@@ -52,11 +120,13 @@ header {
 }
 
 .logo > span {
-    left : 80px;
+    left : 12px;
     top :25px;
     color: white;
     font-size : 20px
 }
+
+//Search bar component
 
 .search-bar-group {
     height : 30px;
@@ -70,18 +140,23 @@ header {
 }
 
 .ui-inputgroup-addon .fa {
-    margin : 10px auto;
+    margin : 5px auto;
+    color : #484848;
+    font-size: 24px;
+    -webkit-text-stroke: 2px white;
+
 }
 
 .ui-inputgroup .ui-inputgroup-addon:first-child {
-    border-radius: 10px 0 0 10px;  
+    width : 50px;
+    border-radius: 5px 0 0 5px;  
     background: white;
     border : 0;
 }
 
 
 .search-bar > input {
-    border-radius: 0 10px 10px 0;  
+    border-radius: 0 5px 5px 0;  
     width : 100%;
     height : 30px;
     border : 0;
@@ -89,36 +164,42 @@ header {
     font-size: 16px;
 }
 
+//SidePanel
 
-// .search-bar {
-//     width : 60%;
-//     height : inherit;
-//     color : #B0BEC5;
-// }
+.ui-sidebar {
+ overflow-y: scroll 
+}
 
-// .search-bar > .search-input > span.search-icon {
-//     z-index: 1;
-//     top : 26%;
-//     left : 10px;
-//     font-size : 25px;
-//     -webkit-text-stroke: 2.5px white;
-// }
+.sidePanelMenuButton {
+    height : 80px;
+    background: #19A599;
+    color : white; 
+    border : 1px solid #19A599; 
+    border-radius : 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    cursor: pointer;
+}
 
-// .search-bar > .search-input > span {
-//     font-family: Roboto-thin;
-// }
+.sidePanelMenuButton:active {
+    background: #15887e;
+    transition: 0.25s;
+}
 
-// .search-input {
-//     padding : 10px;
-//     margin-top : 15px;
-//     box-shadow: 0px 0px 3px 0 rgba(0, 0, 0, 0.5);
-//     border : 0px;
-//     width : 100%;
-//     font-size : 20px;
-//     height : 25px;
-//     border-radius: 10px 0px 10px 0px;
-// }
+.ui-sidebar-close {
+    display : none
+}
 
-// .fixed-header-resolve {
-//     margin-top: 90px;
-// }
+.panel {
+    height : 60px;
+    font-size: 20px;
+    background: white;
+    margin : 0 auto;
+    color : #484848;
+    cursor: pointer;
+}
+
+.panel:active {
+    color : #15887e;
+}
+
+

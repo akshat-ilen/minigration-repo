@@ -12,8 +12,8 @@ import { MenuItem } from 'primeng/api';
     encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
-    
-    menuSideBar:Boolean = false
+
+    menuSideBar: Boolean = false
 
 
     items: MenuItem[];
@@ -34,61 +34,77 @@ export class HomeComponent implements OnInit {
         this.items = [
             {
                 label: 'Products',
-                items: [{
-                    label: 'New',
-                    icon: 'fa fa-fw fa-plus',
-                    items: [
-                        { label: 'Project' },
-                        { label: 'Other' },
+                styleClass : 'mainMenuElements',
+                items: [
+                    [
+                        {
+                            label: 'Cameras',
+                            items: [{ label: 'Nikon',  }, { label: 'Canon' }]
+                        },
+                        {
+                            label: 'Party',
+                            styleClass : 'categoryMenu',
+                            items: [{ label: 'Nikon' }, { label: 'Canon' }]
+                        },
+                    ],
+                    [
+                        {
+                            label: 'Outdoor',
+                            styleClass : 'categoryMenu',
+                            items: [{ label: 'Nikon' }, { label: 'Canon' }]
+                        },
+                        {
+                            label: 'Electronics',
+                            styleClass : 'categoryMenu',
+                            items: [{ label: 'Nikon' }, { label: 'Canon' }]
+                        },
                     ]
-                },
-                { label: 'Open' },
-                { separator: true },
-                { label: 'Quit' }
                 ]
             },
             {
                 label: 'Experiences',
+                styleClass : 'mainMenuElements',
                 items: [
-                    { label: 'Undo', icon: 'fa fa-fw fa-mail-forward' },
-                    { label: 'Redo', icon: 'fa fa-fw fa-mail-reply' }
+                    [
+                        {
+                            label: 'Camera',
+                            items: [{ label: 'Nikon' }, { label: 'Canon' }]
+                        },
+                        {
+                            label: 'Camera',
+                            items: [{ label: 'Nikon' }, { label: 'Canon' }]
+                        },
+                    ],
                 ]
             },
             {
-                label: 'List Items',
-                items: [
-                    {
-                        label: 'Contents'
-                    }
-                ]
+                label: 'List Item',
+                styleClass : 'mainMenuElements menuButtons',
+                style : {
+                    'border' : '2px solid white',
+                    'border-radius': '10px'
+                }
             },
             {
-                label: 'Sign Up',
-                items: [{
-                    label: 'New',
-                    icon: 'fa fa-fw fa-plus',
-                    items: [
-                        { label: 'Project' },
-                        { label: 'Other' },
-                    ]
-                },
-                { label: 'Open' },
-                { separator: true },
-                { label: 'Quit' }
-                ]
+                label: 'Sign up',
+                styleClass : 'mainMenuElements menuButtons',
+                style : {
+                    'border' : '2px solid white',
+                    'border-radius': '10px'
+                }
             },
         ];
 
     }
 
     openMenu() {
-        if(window.innerWidth <= 850) {
+        if (window.innerWidth <= 850) {
             this.menuSideBar = true
         }
     }
 
     onResize($event) {
-        if(this.menuSideBar) {
+        if (this.menuSideBar) {
             this.menuSideBar = (window.innerWidth <= 850)
         }
     }
